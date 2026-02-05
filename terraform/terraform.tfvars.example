@@ -1,0 +1,40 @@
+# Example terraform.tfvars file
+# Copy this file to terraform.tfvars and customize the values
+
+# AWS Configuration
+aws_region  = "us-east-1"
+environment = "dev"
+
+# S3 Bucket Configuration
+bucket_name = "my-custom-bucket-name"  # Must be globally unique, or leave null for auto-generated name
+force_destroy = false
+versioning_enabled = true
+
+# Example CORS rules (uncomment and modify as needed)
+# cors_rules = [
+#   {
+#     allowed_headers = ["*"]
+#     allowed_methods = ["GET", "POST"]
+#     allowed_origins = ["https://example.com"]
+#     max_age_seconds = 3000
+#   }
+# ]
+
+# Example notification configurations (uncomment and modify as needed)
+# notification_configurations = {
+#   lambda_configurations = [
+#     {
+#       lambda_function_arn = "arn:aws:lambda:us-east-1:123456789012:function:my-function"
+#       events             = ["s3:ObjectCreated:*"]
+#       filter_prefix      = "uploads/"
+#       filter_suffix      = ".jpg"
+#     }
+#   ]
+# }
+
+# Additional tags
+tags = {
+  Owner       = "DevOps Team"
+  CostCenter  = "Engineering"
+  Application = "test-demo"
+}
